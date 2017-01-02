@@ -32,9 +32,17 @@ even days of computing time, and you realize when you try to apply your newly tr
 filters onto some different data and you get the following 
 
 ```
-InvalidArgumentError (see above for traceback): Conv2DSlowBackpropInput: input and out_backprop must have the same batch size
-     [[Node: conv2d_transpose_3 = Conv2DBackpropInput[T=DT_FLOAT, data_format="NHWC", padding="SAME", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, _device="/job:localhost/replica:0/task:0/gpu:0"](conv2d_transpose_3/output_shape, w0/read, _recv_lg_real_images_0/_69)]]
-     [[Node: Tanh_1/_71 = _Recv[client_terminated=false, recv_device="/job:localhost/replica:0/task:0/cpu:0", send_device="/job:localhost/replica:0/task:0/gpu:0", send_device_incarnation=1, tensor_name="edge_4087_Tanh_1", tensor_type=DT_FLOAT, _device="/job:localhost/replica:0/task:0/cpu:0"]()]]
+InvalidArgumentError (see above for traceback): Conv2DSlowBackpropInput: input and 
+    out_backprop must have the same batch size
+  [[Node: conv2d_transpose_3 = Conv2DBackpropInput[T=DT_FLOAT, data_format="NHWC", 
+    padding="SAME", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, 
+    _device="/job:localhost/replica:0/task:0/gpu:0"](conv2d_transpose_3/output_shape, 
+    w0/read, _recv_lg_real_images_0/_69)]]
+  [[Node: Tanh_1/_71 = _Recv[client_terminated=false, 
+    recv_device="/job:localhost/replica:0/task:0/cpu:0", 
+    send_device="/job:localhost/replica:0/task:0/gpu:0", 
+    send_device_incarnation=1, tensor_name="edge_4087_Tanh_1", 
+    tensor_type=DT_FLOAT, _device="/job:localhost/replica:0/task:0/cpu:0"]()]]
 ```
 
 Oops! If you restart the application then you'll lose your filters (assuming you haven't 
