@@ -16,7 +16,6 @@ Say I had a method
                                     z.get_shape().as_list()[2], self.dim],
                                     strides=[1, d_h, d_w, 1]))
     ...
-
 ```
 
 which we run via
