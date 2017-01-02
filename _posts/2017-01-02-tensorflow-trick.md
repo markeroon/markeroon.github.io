@@ -9,7 +9,8 @@ use the learned filters on a different set of images of `[other_batch_size, n, n
 
 Say I had a method
 
-```def network(self, z):
+```
+def network(self, z):
 
     deconv = tf.nn.conv2d_transpose(input_, w, output_shape=[self.batch_size, 
                                     z.get_shape().as_list()[1],
