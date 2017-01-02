@@ -22,7 +22,8 @@ def network(self, z):
 which we run via
 
 ```
-self.inputs = tf.placeholder(tf.float32, [self.batch_size, self.input_size, self.input_size, 3], name='real_images')
+self.inputs = tf.placeholder(tf.float32, [self.batch_size, self.input_size, 
+                             self.input_size, 3], name='real_images')
 self.G = self.network(self.inputs)
 self.sess.run(self.G, feed_dict={self.inputs: inputs})
 ```
